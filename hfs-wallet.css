@@ -35,3 +35,9 @@
 @media(max-width:900px){.hw{grid-template-columns:1fr;gap:20px}.hw-right{order:-1}.hw-copy h1{font-size:clamp(28px,7vw,40px)}.hw-copy p{font-size:16px}}
 @media(max-width:560px){.hw-btn{flex:1 1 100%;justify-content:center}.hw-pill{padding:0 10px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.hw-card,.hw-swap{transition:none}}
+
+.home .hb-hero{position:relative;isolation:isolate;overflow:hidden;padding:48px 0 88px}
+.home .hb-hero::before{content:"";position:absolute;inset:-10% -5% 10%;z-index:-2;pointer-events:none;background:radial-gradient(38% 55% at 78% 42%,color-mix(in srgb,#00a651 34%,transparent),transparent 70%),radial-gradient(30% 45% at 58% 78%,color-mix(in srgb,#7fd6a3 45%,transparent),transparent 70%),radial-gradient(34% 50% at 14% 20%,color-mix(in srgb,#c8ecd8 80%,transparent),transparent 72%),radial-gradient(22% 32% at 92% 10%,color-mix(in srgb,#EE2F25 10%,transparent),transparent 70%)}
+.home .hb-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,color-mix(in srgb,var(--s) 38%,transparent) 0%,color-mix(in srgb,var(--s) 52%,transparent) 55%,var(--s) 100%);-webkit-backdrop-filter:blur(56px) saturate(150%);backdrop-filter:blur(56px) saturate(150%)}
+.home .hb-hero+.hb-feat{padding-top:24px}
+@media(max-width:900px){.home .hb-hero{padding:28px 0 64px}.home .hb-hero::before{inset:-5% -20% 20%}}
