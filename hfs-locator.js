@@ -61,6 +61,7 @@ function mount(el,opt){if(!el||!window.L)return;opt=opt||{};
   try{const g=await geocode(v);if(!g)return err(`We couldn't find “${v}”. Try a ZIP code, city or full address.`);run(g.ll,g.label,g.city,g.state,false)}catch(x){err('Location search is unavailable right now. Please try again.')}};
  q('.loc-me').onclick=()=>{if(!navigator.geolocation)return err('Your browser does not support location sharing.');sum.className='loc-sum';sum.textContent='Finding your location…';
   navigator.geolocation.getCurrentPosition(async p=>{const ll=[p.coords.latitude,p.coords.longitude];const a=await reverse(ll);input.value='';run(ll,'your location',a.city,a.state,true)},()=>err('We couldn’t get your location. Check your browser permissions or enter a ZIP code.'),{timeout:10000})};
+ const P=opt.preset;if(P){(P.f||[]).forEach(([k,v])=>{const c=[...el.querySelectorAll(`.loc-acc[data-k="${k}"] input`)].find(x=>x.value===v);if(c){c.checked=true;sel[k].add(v)}});syncCounts();if(P.me)q('.loc-me').click();else if(P.q){input.value=P.q;q('form').requestSubmit()}}
 }
 window.HFSLocator={mount};
 })();
