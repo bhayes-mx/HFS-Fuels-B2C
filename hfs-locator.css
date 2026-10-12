@@ -81,3 +81,6 @@
 .loc.fopen .loc-rail-f{display:block;position:sticky;bottom:0;margin:auto -20px 0;padding:16px 20px 20px;background:var(--s-top);border-top:1px solid var(--olv)}
 .loc-done{width:100%;height:52px;border-radius:999px;background:var(--red);color:#fff;font:600 16px/1 var(--fa)}.loc-done:hover{filter:brightness(1.1)}
 }
+
+.loc-st .loc-body{grid-template-columns:minmax(0,1fr)!important}.loc-st .loc-rail{display:none!important}
+.tl-dark{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9)}

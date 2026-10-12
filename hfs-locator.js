@@ -27,11 +27,11 @@ function mount(el,opt){if(!el||!window.L)return;opt=opt||{};
  el.innerHTML=`<form class="loc-bar"><label class="loc-in"><span class="ms">search</span><input type="search" placeholder="ZIP code, address, city or destination" aria-label="Search location"></label><button type="submit" class="loc-go">Search</button><button type="button" class="loc-me"><span class="ms">my_location</span>Use my location</button></form>
 <div class="loc-head"><div class="loc-sum init">View all locations <a href="https://stations.sinclairoil.com/index.html" target="_blank" rel="noopener">by state</a></div><div class="loc-ctl"><div class="loc-seg" role="tablist"><button type="button" data-v="map" class="on"><span class="ms">map</span>Map</button><button type="button" data-v="list" disabled><span class="ms">format_list_bulleted</span>List</button></div><button type="button" class="loc-fbtn"><span class="ms">tune</span>Apply Filters<span class="loc-fn"></span></button></div></div>
 <div class="loc-body"><aside class="loc-rail" aria-label="Filters"><div class="loc-rail-h"><span>Filter results</span><button type="button" class="loc-clear" hidden>Clear all</button><button type="button" class="loc-x" aria-label="Close filters"><span class="ms">close</span></button></div>${groups.map(g=>{const G=GROUPS[g.id];return `<div class="loc-acc" data-k="${G.key}"><button type="button" class="loc-acch" aria-expanded="false"><span>${esc(g.name)}</span><span class="loc-cnt"></span><span class="ms">expand_more</span></button><div class="loc-accb"><div>${G.opts.map(o=>`<label class="loc-chk"><input type="checkbox" value="${esc(o)}"><span>${esc(o)}</span></label>`).join('')}</div></div></div>`}).join('')}<div class="loc-rail-f"><button type="button" class="loc-done">Show results</button></div></aside><div class="loc-main"><div class="loc-map"></div><div class="loc-list"></div></div></div>
-<p class="loc-note">Prototype: map tiles © OpenStreetMap / CARTO stand in for Google Maps; station locations are sample data.</p>`;
+<p class="loc-note">Prototype: map tiles © Esri stand in for Google Maps; station locations are sample data.</p>`;
  const q=s=>el.querySelector(s),input=q('input[type=search]'),sum=q('.loc-sum'),list=q('.loc-list'),seg=el.querySelectorAll('.loc-seg button'),clr=q('.loc-clear');
  const dark=document.body.classList.contains('dark');
  const map=L.map(q('.loc-map'),{zoomControl:true,scrollWheelZoom:false}).setView([39.5,-98.35],4);
- L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark?'dark_all':'rastertiles/voyager'}/{z}/{x}/{y}{r}.png`,{maxZoom:19,subdomains:'abcd',attribution:'© OpenStreetMap contributors © CARTO'}).addTo(map);
+ L.tileLayer(dark?'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}':'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:dark?16:19,attribution:'Tiles © Esri, HERE, Garmin, © OpenStreetMap contributors'}).addTo(map);
  const layer=L.layerGroup().addTo(map);let markers={},all=[],origin=null,label='',isMe=false;
  function setView(v){el.classList.toggle('list',v==='list');seg.forEach(b=>b.classList.toggle('on',b.dataset.v===v));if(v==='map')setTimeout(()=>map.invalidateSize(),0)}
  seg.forEach(b=>b.onclick=()=>!b.disabled&&setView(b.dataset.v));
@@ -63,5 +63,39 @@ function mount(el,opt){if(!el||!window.L)return;opt=opt||{};
   navigator.geolocation.getCurrentPosition(async p=>{const ll=[p.coords.latitude,p.coords.longitude];const a=await reverse(ll);input.value='';run(ll,'your location',a.city,a.state,true)},()=>err('We couldn’t get your location. Check your browser permissions or enter a ZIP code.'),{timeout:10000})};
  const P=opt.preset;if(P){(P.f||[]).forEach(([k,v])=>{const c=[...el.querySelectorAll(`.loc-acc[data-k="${k}"] input`)].find(x=>x.value===v);if(c){c.checked=true;sel[k].add(v)}});syncCounts();if(P.me)q('.loc-me').click();else if(P.q){input.value=P.q;q('form').requestSubmit()}}
 }
-window.HFSLocator={mount};
+const STAT=[['Sinclair','WY',41.78,-107.11],['Salt Lake City','UT',40.76,-111.89],['Vernal','UT',40.455,-109.53],['Dinosaur','CO',40.243,-109.015],['Denver','CO',39.74,-104.99],['Grand Junction','CO',39.064,-108.55],['Casper','WY',42.85,-106.32],['Cheyenne','WY',41.14,-104.82],['Cody','WY',44.526,-109.056],['Billings','MT',45.78,-108.5],['Bozeman','MT',45.68,-111.04],['Boise','ID',43.615,-116.2],['Idaho Falls','ID',43.49,-112.03],['Rapid City','SD',44.08,-103.23],['Omaha','NE',41.26,-95.94],['Wichita','KS',37.69,-97.34],['Albuquerque','NM',35.08,-106.65],['Flagstaff','AZ',35.2,-111.65],['Las Vegas','NV',36.17,-115.14],['Kansas City','MO',39.1,-94.58]];
+// Sample statue sites. Replace with real DINO statue feed.
+function statues(el){if(!el||!window.L)return;const Rn=rng(4242);
+ const all=STAT.map(([c,st,la,ln],i)=>({id:'d'+i,name:'Sinclair #'+(1000+Math.floor(Rn()*9000)),addr:(100+Math.floor(Rn()*9800))+' '+STREETS[Math.floor(Rn()*STREETS.length)],city:c+', '+st,st,ll:[la+(Rn()-.5)*.04,ln+(Rn()-.5)*.04],d:null,hours:'Statue viewable 24/7'})).sort((a,b)=>a.st.localeCompare(b.st)||a.city.localeCompare(b.city));
+ const nSt=new Set(all.map(s=>s.st)).size;
+ el.className='loc loc-st has';
+ el.innerHTML=`<form class="loc-bar"><label class="loc-in"><span class="ms">search</span><input type="search" placeholder="Find the statue closest to a ZIP, city or destination" aria-label="Search location"></label><button type="submit" class="loc-go">Search</button><button type="button" class="loc-me"><span class="ms">my_location</span>Closest to me</button></form>
+<div class="loc-head"><div class="loc-sum"></div><div class="loc-ctl"><div class="loc-seg" role="tablist"><button type="button" data-v="map" class="on"><span class="ms">map</span>Map</button><button type="button" data-v="list"><span class="ms">format_list_bulleted</span>List</button></div></div></div>
+<div class="loc-body"><div class="loc-main"><div class="loc-map"></div><div class="loc-list"></div></div></div>
+<p class="loc-note">Prototype: map tiles © Esri stand in for Google Maps; statue locations are sample data.</p>`;
+ const q=s=>el.querySelector(s),input=q('input[type=search]'),sum=q('.loc-sum'),list=q('.loc-list'),seg=el.querySelectorAll('.loc-seg button');
+ const dark=document.body.classList.contains('dark');
+ const map=L.map(q('.loc-map'),{zoomControl:true,scrollWheelZoom:false}).setView([40,-105],5);
+ L.tileLayer(dark?'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}':'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:dark?16:19,attribution:'Tiles © Esri, HERE, Garmin, © OpenStreetMap contributors'}).addTo(map);
+ const layer=L.layerGroup().addTo(map);let markers={},origin=null,label='',isMe=false;
+ function setView(v){el.classList.toggle('list',v==='list');seg.forEach(b=>b.classList.toggle('on',b.dataset.v===v));if(v==='map')setTimeout(()=>map.invalidateSize(),0)}
+ seg.forEach(b=>b.onclick=()=>setView(b.dataset.v));
+ const pin=(n,hl)=>L.divIcon({className:'',html:`<div class="loc-pin${hl?' hl':''}"><b>${n}</b></div>`,iconSize:[30,30],iconAnchor:[15,30],popupAnchor:[0,-28]});
+ const dtx=s=>s.d==null?esc(s.hours):s.d.toFixed(0)+' mi · '+esc(s.hours);
+ const pop=s=>`<div class="pop"><h4>${esc(s.city)}</h4><div class="addr">${esc(s.name)}<br>${esc(s.addr)}</div><div class="d">${dtx(s)}</div><a class="dir" href="${dirUrl(s)}" target="_blank" rel="noopener"><span class="ms" style="font-size:16px">directions</span>Directions</a></div>`;
+ function focus(id){setView('map');const m=markers[id];if(!m)return;map.setView(m.getLatLng(),13);m.openPopup()}
+ function render(){const res=origin?all.map(s=>(s.d=miles(origin,s.ll),s)).slice().sort((a,b)=>a.d-b.d):all;layer.clearLayers();markers={};
+  if(origin)L.marker(origin,{icon:L.divIcon({className:'',html:`<div class="${isMe?'loc-me-dot':'loc-ctr'}"></div>`,iconSize:[18,18],iconAnchor:[9,9]}),zIndexOffset:-100,interactive:false}).addTo(layer);
+  res.forEach((s,i)=>{const m=L.marker(s.ll,{icon:pin(i+1)}).bindPopup(pop(s)).addTo(layer);m.on('popupopen',()=>m.setIcon(pin(i+1,true)));m.on('popupclose',()=>m.setIcon(pin(i+1)));markers[s.id]=m});
+  map.invalidateSize();map.fitBounds(L.latLngBounds(origin?[origin,...res.slice(0,3).map(s=>s.ll)]:res.map(s=>s.ll)).pad(.12));
+  const c=res[0];sum.innerHTML=origin?`Closest DINO statue to <b>${esc(label)}</b>: <b>${esc(c.city)}</b>, ${c.d.toFixed(0)} miles away`:`<b>${all.length} DINO statues</b> across ${nSt} states. Search to find the one closest to you.`;
+  list.innerHTML=res.map((s,i)=>`<article class="loc-item"><span class="loc-num">${i+1}</span><div><h3>${esc(s.city)}</h3><div class="addr">${esc(s.name)} · ${esc(s.addr)}</div></div><div class="loc-dist">${s.d==null?esc(s.st):s.d.toFixed(0)+' mi<small>away</small>'}</div><div class="loc-acts"><a class="dir" href="${dirUrl(s)}" target="_blank" rel="noopener"><span class="ms">directions</span>Directions</a><button type="button" class="show" data-id="${s.id}"><span class="ms">location_on</span>Show on map</button></div></article>`).join('');
+  list.querySelectorAll('.show').forEach(b=>b.onclick=()=>focus(b.dataset.id))}
+ function err(t){sum.className='loc-sum err';sum.textContent=t}
+ q('form').onsubmit=async e=>{e.preventDefault();const v=input.value.trim();if(!v)return input.focus();sum.className='loc-sum';sum.textContent='Searching…';
+  try{const g=await geocode(v);if(!g)return err(`We couldn't find “${v}”. Try a ZIP code, city or full address.`);origin=g.ll;label=g.label;isMe=false;render()}catch(x){err('Location search is unavailable right now. Please try again.')}};
+ q('.loc-me').onclick=()=>{if(!navigator.geolocation)return err('Your browser does not support location sharing.');sum.className='loc-sum';sum.textContent='Finding your location…';
+  navigator.geolocation.getCurrentPosition(p=>{origin=[p.coords.latitude,p.coords.longitude];label='your location';isMe=true;input.value='';render()},()=>err('We couldn’t get your location. Check your browser permissions or enter a ZIP code.'),{timeout:10000})};
+ render()}
+window.HFSLocator={mount,statues,util:{geocode,reverse,miles,rng,AMEN,FUELS,STREETS,esc}};
 })();
