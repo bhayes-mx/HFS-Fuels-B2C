@@ -1,6 +1,6 @@
 (function(){
 const AMEN=['Car Wash','Open 24/7','Convenience Store','EV Charging','Truck Parking','Hot Food','Fresh Coffee','Restrooms'];
-const FUELS=['Regular','Mid-Grade','Premium','Diesel','E15','E85','Ethanol-Free'];
+const FUELS=['DINOCARE®','Tier 3','Diesel','E15','E85'];
 const STREETS=['Main St','Broadway','N Highway 89','Center St','W State St','E 4th Ave','Frontage Rd','Commerce Blvd','Lincoln Way','S Grand Ave','Railroad Ave','Interstate Dr'];
 const RADIUS=25;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

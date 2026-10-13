@@ -1,15 +1,15 @@
 // Site structure from HFS.pdf — L1 (red) › L2 (blue, clickable) › L3 (yellow). f = features (orange).
 window.HFS_SITEMAP = [
 {id:'on-the-road',name:'On the Road',children:[
- {id:'find-a-station',name:'Find a Sinclair Station',quick:[{k:'top-tier',name:'Top Tier',f:[]},{k:'diesel',name:'Diesel',f:[['fu','Diesel']]},{k:'open-24-7',name:'Open 24/7',f:[['am','Open 24/7']]},{k:'convenience-store',name:'Convenience Store',f:[['am','Convenience Store']]}],children:[
+ {id:'find-a-station',name:'Find a Sinclair Station',quick:[{k:'tier-3-gas',name:'Tier 3',label:'Tier 3 Gas Available',f:[['fu','Tier 3']]},{k:'diesel',name:'Diesel',label:'Diesel Available',f:[['fu','Diesel']]},{k:'open-24-7',name:'Open 24/7',label:'Open 24/7',f:[['am','Open 24/7']]},{k:'convenience-store',name:'Convenience Store',label:'Convenience Store Attached',f:[['am','Convenience Store']]}],children:[
   {id:'search-locate',name:'Search by Amenities',filter:true,desc:'Map',menuDesc:false,f:[
    {name:'Amenities Filter',desc:'Diesel, EV Fast Charging, Car Wash, 24/7, Truck Parking, Convenience Store, Hot Food, Fresh Coffee'},
    {name:'Station Details',desc:'Dynamic landing page per location with live pricing, hours, and available fuels'}]},{id:'search-fuel-type',name:'Search by Fuel Type',filter:true}]},
  {id:'driver-tools',name:'Driver Tools',children:[{id:'trip-planner',name:'Trip Planner'},{id:'savings-calculators',name:'Savings Calculator'},{id:'seasonal-guides',name:'Seasonal Guides'},{id:'commercial-products',name:'Commercial Products'}]},
- {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'top-tier',name:'Top Tier Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
+ {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'tier-3-gas',name:'Tier 3 Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
 {id:'at-the-pump',name:'At the Pump',children:[
  {id:'dinopay',name:'Savings & Rewards',children:[{id:'download-the-apps',name:'Download the Apps'},{id:'mydino-rewards',name:'MyDINO Rewards',desc:'Saved savings, cents-per-gallon discounts, & points breakdown',menuDesc:false},{id:'dinopay-app',name:'DINOPAY'},{id:'help-faqs',name:'Help & FAQs'}]},
- {id:'fuel-savings',name:'Cards & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'sinclair-green-card',name:'Sinclair Green Card',desc:'Application & account login',menuDesc:false},{id:'sinclair-fleet-card',name:'Sinclair Fleet Card',desc:'Application & account login',menuDesc:false},{id:'co-branded-credit-cards',name:'Co-Branded Credit Cards'}]},
+ {id:'fuel-savings',name:'Cards & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'sinclair-green-card',name:'Green Card',desc:'Application & account login',menuDesc:false},{id:'sinclair-fleet-card',name:'Fleet Card',desc:'Application & account login',menuDesc:false},{id:'co-branded-credit-cards',name:'Co-Branded Credit Cards'}]},
  {id:'loyalty',name:'Loyalty Program',children:[{id:'program-overview',name:'Program Overview'},{id:'sign-up-access',name:'Sign-Up & Access'},{id:'mobile-advantage',name:'Mobile Advantage'},{id:'current-offers',name:'Current Offers'}]}]},
 {id:'in-the-shop',name:'In the Shop',children:[
  {id:'dino-merch',name:'DINO Merch',children:[{id:'the-dino-story',name:'The DINO Story'},{id:'find-a-dino-statue',name:'Find a DINO Statue',desc:'Every statue, nationwide',menuDesc:false},{id:'store-overview',ext:'https://mydinostore.com/',name:'The DINO Store'}]},
@@ -20,7 +20,7 @@ window.HFS_SITEMAP = [
  {id:'community',name:'Community',children:[{id:'local-initiatives',name:'Local Initiatives'},{id:'sponsorships',name:'Sponsorships'},{id:'our-footprint',name:'Our Footprint'},{id:'work-with-us',name:'Work with Us'}]},
  {id:'newsroom',name:'Newsroom',children:[{id:'press-releases',name:'Press Releases'},{id:'media-kits',name:'Media Kits'},{id:'blog',name:'Blog'},{id:'investor-relations',name:'Investor Relations'}]}]},
 {id:'partner-with-us',name:'Partner with Us',logins:[{name:'B2B Portal',href:'#'},{name:'Brand Excellence',href:'#'},{name:'Fleet Track Online',href:'#'},{name:'Carriers',href:'#'}],children:[
- {id:'distributors',name:'Distributors',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-distributor',name:'Become a Distributor'},{id:'terminal-map',name:'Terminal Map'}]},
+ {id:'distributors',name:'Distributors',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-distributor',name:'Become a Distributor'},{id:'wholesale-supply',name:'Wholesale Supply'},{id:'terminal-map',name:'Terminal Map'}]},
  {id:'dealers',name:'Dealers',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-dealer',name:'Become a Dealer',f:[{name:'Dealer Network'}]},{id:'branding-opportunities',name:'Branding Opportunities'},{id:'brand-excellence',name:'Brand Excellence'},{id:'operational-support',name:'Operational Support',desc:'POS systems, DINOPAY integration',menuDesc:false}]},
  {id:'fleets',name:'Fleets',children:[{id:'commercial-programs',name:'Commercial Programs'},{id:'bulk-delivery-services',name:'Bulk Delivery Services'}]},
  {id:'licensees',name:'Licensees',children:[{id:'request-details',name:'Request Details'}]}]}
