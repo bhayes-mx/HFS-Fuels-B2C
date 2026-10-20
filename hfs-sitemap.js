@@ -23,7 +23,7 @@ window.HFS_SITEMAP = [
 {id:'our-story',name:'About Us',children:[
  {id:'sinclair-heritage',mw:161,name:'Sinclair Heritage',children:[{id:'sinclair-today',name:'Sinclair Today'},{id:'our-history',name:'Our History Timeline'},{id:'interactive-gallery',name:'Interactive Gallery',desc:'Vintage advertising, historic stations, & parade appearances',menuDesc:false},{id:'our-footprint',name:'Our Footprint'}]},
  {id:'partnerships',mw:181,name:'Partnerships',children:[{id:'fueling-folds-of-honor',name:'Folds of Honor'},{id:'brand-partnerships',name:'Brand Partnerships'},{id:'seasonal-giveaways',name:'Corporate Partnerships'},{id:'sponsorships',name:'Sponsorships'}]},
- {id:'newsroom',mw:136,name:'Newsroom',children:[{id:'press-releases',name:'Press Releases'},{id:'media-kits',name:'Media Kits'},{id:'blog',name:'Blog'},{id:'investor-relations',ext:'https://investor.hfsinclair.com/investor-relations/default.aspx',name:'Investor Relations'}]}]}
+ {id:'newsroom',mw:136,name:'Newsroom',children:[{id:'press-releases',name:'Latest News'},{id:'media-kits',name:'Media Kits'},{id:'blog',name:'Blog'},{id:'investor-relations',ext:'https://investor.hfsinclair.com/investor-relations/default.aspx',name:'Investor Relations'}]}]}
 ];
 // Utility pages (eyebrow + footer only)
 window.HFS_UTILITY = [
