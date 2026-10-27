@@ -8,8 +8,8 @@ window.HFS_SITEMAP = [
  {id:'driver-tools',name:'Driver Tools',children:[{id:'trip-planner',name:'Trip Planner'},{id:'savings-calculators',name:'Savings Calculator'},{id:'seasonal-guides',name:'Seasonal Guides'},{id:'commercial-products',name:'Commercial Products'}]},
  {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'tier-3-gas',name:'Tier 3 Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
 {id:'at-the-pump',name:'At the Pump',children:[
- {id:'dinopay',name:'Savings & Rewards',children:[{id:'download-the-apps',name:'Download the Apps'},{id:'mydino-rewards',name:'MyDINO Rewards',desc:'Saved savings, cents-per-gallon discounts, & points breakdown',menuDesc:false},{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'}]},
- {id:'fuel-savings',name:'Cards & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'sinclair-fleet-card',name:'Fleet Card',desc:'Application & account login',menuDesc:false},{id:'co-branded-credit-cards',name:'Co-Branded Credit Cards'}]},
+ {id:'dinopay',name:'Savings & Rewards',children:[{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'},{id:'download-the-apps',name:'Download the Apps'}]},
+ {id:'fuel-savings',name:'Cards & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'sinclair-fleet-card',name:'Fleet Card',ext:'https://www.sinclairfleettrack.com/',desc:'Application & account login',menuDesc:false},{id:'co-branded-credit-cards',name:'Co-Branded Credit Cards'}]},
  {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Current Offers'}]}]},
 {id:'in-the-shop',name:'In the Shop',children:[
  {id:'the-dino-story',name:'The DINO Story',children:[{id:'find-a-dino-statue',name:'Find a DINO Statue',desc:'Every statue, nationwide',menuDesc:false},{id:'dino-stories',ext:'https://www.instagram.com/stories/highlights/17848674799886148/',name:'DINO Reels'},{id:'dino-clips',ext:'https://www.tiktok.com/@sinclairdino',name:'DINO Clips'}]},
