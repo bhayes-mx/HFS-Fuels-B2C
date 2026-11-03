@@ -8,18 +8,19 @@ window.HFS_SITEMAP = [
  {id:'driver-tools',name:'Driver Tools',children:[{id:'trip-planner',name:'Trip Planner'},{id:'savings-calculators',name:'Savings Calculator'},{id:'seasonal-guides',name:'Seasonal Guides'},{id:'commercial-products',name:'Commercial Products'}]},
  {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'tier-3-gas',name:'Tier 3 Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
 {id:'at-the-pump',name:'At the Pump',children:[
- {id:'dinopay',name:'Savings & Rewards',children:[{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'},{id:'download-the-apps',name:'Download the Apps'}]},
- {id:'fuel-savings',name:'Cards & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'sinclair-fleet-card',name:'Fleet Card',ext:'https://www.sinclairfleettrack.com/',desc:'Application & account login',menuDesc:false},{id:'co-branded-credit-cards',name:'Co-Branded Credit Cards'}]},
- {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Current Offers'}]}]},
+ {id:'dinopay',name:'Apps & Cards',children:[{id:'download-the-apps',name:'Download the Apps'},{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'}]},
+ {id:'fuel-savings',name:'Promotions & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'pump-seasonal-guides',name:'Seasonal Promotions'},{id:'sweepstakes-giveaways',name:'Sweepstakes & Giveaways'}]},
+ {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Current Offers'}]},
+ {id:'fleets',name:'Fleets',children:[{id:'sinclair-fleet-card',name:'Fleet Card',ext:'https://www.sinclairfleettrack.com/',desc:'Application & account login',menuDesc:false},{id:'commercial-programs',name:'Commercial Programs'}]}]},
 {id:'in-the-shop',name:'In the Shop',children:[
  {id:'the-dino-story',name:'The DINO Story',children:[{id:'find-a-dino-statue',name:'Find a DINO Statue',desc:'Every statue, nationwide',menuDesc:false},{id:'dino-stories',ext:'https://www.instagram.com/stories/highlights/17848674799886148/',name:'DINO Reels'},{id:'dino-clips',ext:'https://www.tiktok.com/@sinclairdino',name:'DINO Clips'}]},
  {id:'dino-merch',name:'DINO Merch',children:[{id:'shop-accessories',ext:'https://mydinostore.com/collections/accessories-1',name:'Shop Accessories'},{id:'shop-apparel',ext:'https://mydinostore.com/collections/apparel-1',name:'Shop Apparel'},{id:'shop-gear',ext:'https://mydinostore.com/collections/dino-gear-1',name:'Shop Gear'}]},
  {id:'gift-cards',name:'Gift Cards',children:[{id:'buy-gift-cards',ext:'https://sinclairoil.wgiftcard.com/responsive/landing_responsive/landing/sinclairoil',name:'Buy Gift Cards',desc:'eGift or physical',menuDesc:false},{id:'check-gift-card-balance',ext:'https://sinclairoil.wgiftcard.com/rbc/sinclairoil',name:'Check Gift Card Balance'},{id:'bulk-order-request',ext:'https://storefront.wgiftcard.com/responsive_login/sinclairoil',name:'Bulk Order Request'}]}]},
 {id:'partner-with-us',name:'Our Network',logins:[{name:'B2B Portal',href:'https://distributors.hfsinclair.com/s/login/?ec=302&startURL=%2Fs%2F'},{name:'Brand Excellence',href:'#'},{name:'Fleet Track Online',href:'#'}],children:[
  {id:'distributors',name:'Distributors',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-distributor',name:'Become a Distributor'},{id:'wholesale-supply',name:'Wholesale Supply'},{id:'terminal-map',name:'Terminal Map'}]},
- {id:'dealers',name:'Dealers',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-dealer',name:'Become a Dealer',f:[{name:'Dealer Network'}]},{id:'branding-opportunities',name:'Branding Opportunities'},{id:'brand-excellence',name:'Brand Excellence'},{id:'operational-support',name:'Operational Support',desc:'POS systems, DINOPAY integration',menuDesc:false}]},
- {id:'fleets',name:'Fleets',children:[{id:'commercial-programs',name:'Commercial Programs'},{id:'bulk-delivery-services',name:'Bulk Delivery Services'}]},
- {id:'licensees',name:'Licensees',children:[{id:'request-details',name:'Request Details'}]}]},
+ {id:'dealers',name:'Dealers',f:[{name:'Link to Portal',href:'login.html'}],children:[{id:'become-a-dealer',name:'Become a Dealer',f:[{name:'Dealer Network'}]},{id:'branding-opportunities',name:'Branding Opportunities'},{id:'operational-support',name:'Operational Support',desc:'POS systems, DINOPAY integration',menuDesc:false}]},
+ {id:'licensees',name:'Licensees',children:[{id:'request-details',name:'Request Details'}]},
+ {id:'joint-venture',name:'Joint Venture',children:[{id:'request-details',name:'Request Details'}]}]},
 {id:'our-story',name:'About Us',children:[
  {id:'sinclair-heritage',mw:161,name:'Sinclair Heritage',children:[{id:'sinclair-today',name:'Sinclair Today'},{id:'our-history',name:'Our History Timeline'},{id:'interactive-gallery',name:'Interactive Gallery',desc:'Vintage advertising, historic stations, & parade appearances',menuDesc:false},{id:'our-footprint',name:'Our Footprint'}]},
  {id:'partnerships',mw:181,name:'Partnerships',children:[{id:'fueling-folds-of-honor',name:'Folds of Honor'},{id:'brand-partnerships',name:'Brand Partnerships'},{id:'seasonal-giveaways',name:'Corporate Partnerships'},{id:'sponsorships',name:'Sponsorships'}]},
@@ -34,5 +35,5 @@ window.HFS_FOOTER = [
  [['Find a Station','find-a-station'],['Download DINOPAY','download-the-apps'],['MyDINO Rewards','mydino-rewards'],['DINO Store','@https://mydinostore.com/'],['Loyalty Program','loyalty']],
  [['Become a Distributor','become-a-distributor'],['Wholesale Supply','wholesale-supply'],['Fleet Cards','sinclair-fleet-card'],['Terminal Network','terminal-map'],['Portal Login','@https://www.salesforce.com/']],
  [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Work with Us','work-with-us'],['HF Sinclair Corporate','hf-sinclair-corporate']],
- [['Contact Us','contact-us']]
+ [['Contact Sinclair','contact-us']]
 ];
