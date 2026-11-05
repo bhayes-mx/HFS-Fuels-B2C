@@ -9,8 +9,8 @@ window.HFS_SITEMAP = [
  {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'tier-3-gas',name:'Tier 3 Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
 {id:'at-the-pump',name:'At the Pump',children:[
  {id:'dinopay',name:'Apps & Cards',children:[{id:'download-the-apps',name:'Download the Apps'},{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'}]},
- {id:'fuel-savings',name:'Promotions & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'pump-seasonal-guides',name:'Seasonal Promotions'},{id:'sweepstakes-giveaways',name:'Sweepstakes & Giveaways'}]},
- {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Current Offers'}]},
+ {id:'fuel-savings',name:'Promos & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'pump-seasonal-guides',name:'Seasonal Promotions'},{id:'sweepstakes-giveaways',name:'Sweepstakes & Giveaways'}]},
+ {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Rewards & Deals'}]},
  {id:'fleets',name:'Fleets',children:[{id:'sinclair-fleet-card',name:'Fleet Card',ext:'https://www.sinclairfleettrack.com/',desc:'Application & account login',menuDesc:false},{id:'commercial-programs',name:'Commercial Programs'}]}]},
 {id:'in-the-shop',name:'In the Shop',children:[
  {id:'the-dino-story',name:'The DINO Story',children:[{id:'find-a-dino-statue',name:'Find a DINO Statue',desc:'Every statue, nationwide',menuDesc:false},{id:'dino-stories',ext:'https://www.instagram.com/stories/highlights/17848674799886148/',name:'DINO Reels'},{id:'dino-clips',ext:'https://www.tiktok.com/@sinclairdino',name:'DINO Clips'}]},
