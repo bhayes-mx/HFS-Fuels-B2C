@@ -1,0 +1,29 @@
+(function(){
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const TYPES=[
+{k:'dist',id:'t-distributors',name:'Distributor',who:'For fuel jobbers and wholesalers',pts:['Buy Sinclair fuel at the terminal','Supply branded and unbranded stations','Access to the B2B Portal and terminal network'],a:['Become a Distributor','become-a-distributor'],b:['See the Terminal Map','terminal-map']},
+{k:'deal',id:'t-dealers',name:'Dealer',who:'For station owners and operators',pts:['Fly the Sinclair brand at your station','Get support with POS, DINOPAY and loyalty','Supplied through a Sinclair distributor'],a:['Become a Dealer','become-a-dealer'],b:['Operational Support','operational-support']},
+{k:'lic',id:'t-licensees',name:'Licensee',who:'For businesses that want the brand',pts:['License the Sinclair name and DINO','You keep full operating control','Must meet brand standards'],a:['Request More Details','#/contact-us?topic=licensee'],b:['How Licensing Works','how-licensing-works']},
+{k:'jv',id:'t-joint-venture',name:'Joint Venture',who:'For investors and developers',pts:['Co-invest with Sinclair in new sites or infrastructure','Share ownership, risk and return','Best for larger, long-term projects'],a:['Request More Details','#/contact-us?topic=jv'],b:['How Joint Ventures Work','how-joint-ventures-work']}];
+const ROWS=[['Your role','Supply fuel','Run a station','Use the brand','Co-own a project'],['Sinclair\'s role','Fuel supplier','Brand + support','Licensor','Investment partner'],['Investment level','Medium–High','Medium','Low–Medium','High'],['Branding','Optional','Full Sinclair image','Licensed marks','Agreed per project'],['Portal access','B2B Portal','Brand Excellence','Brand Excellence','By agreement']];
+const QS=[['What does your business do today?',[['dist','Supply fuel to stations'],['deal','Own or run a station'],['lic','Planning a new site or retail business']]],['How involved do you want Sinclair to be?',[['dist','Supply agreement only'],['deal','Brand + operating support'],['lic','Brand rights, I run it'],['jv','Shared investment & ownership']]],['Where are you in the process?',[['explore','Just exploring'],['ready','Ready to talk']]]];
+let H=x=>x,S=()=>'';
+const go=v=>v.startsWith('#')?v:H(v);
+function render(o){H=o.href;S=o.src||(()=>'');const L=o.logins||[];
+return `<div class="wrap pws">${o.crumbs}<div class="page-head"><span class="kicker">Our Network</span><h1>There's more than one way to fly the DINO</h1><p class="lede">Whether you supply fuel, run a station, carry the brand or build something new with us, start by finding the partnership that matches your business.</p></div>
+<section class="pws-finder" id="pws-finder" aria-labelledby="pwsFH"><h2 id="pwsFH" class="pws-h">Find my fit</h2>${QS.map((q,i)=>`<div class="pws-q" data-q="${i}"><h3>${i+1}. ${esc(q[0])}</h3><div class="pws-opts">${q[1].map(([v,t])=>`<button type="button" class="pws-opt" data-v="${v}" aria-pressed="false">${esc(t)}</button>`).join('')}</div></div>`).join('')}<div class="pws-res" id="pws-res" aria-live="polite"><span class="pws-hint">Answer questions 1 and 2 to see your best match.</span></div></section>
+<section aria-labelledby="pwsTH"><h2 id="pwsTH" class="pws-h">Compare partner types</h2><div class="pws-types">${TYPES.map(t=>`<article class="pws-type" id="${t.id}" data-k="${t.k}"><div class="pws-ph"><image-slot id="pws-${t.k}" shape="rect"${S('pws-'+t.k)} placeholder="${esc(t.name)} image"></image-slot></div><h3>${esc(t.name)}</h3><p class="pws-who">${esc(t.who)}</p><ul>${t.pts.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><div class="pws-acts"><a class="pws-btn" href="${go(t.a[1])}">${esc(t.a[0])}</a><a class="pws-btn ghost" href="${go(t.b[1])}">${esc(t.b[0])}</a></div></article>`).join('')}</div>
+</section>
+<section class="pws-brand" id="pws-brand" aria-labelledby="pwsBH"><div><span class="pws-eb">Why the Sinclair brand</span><h2 id="pwsBH">What every partner gets from the Sinclair brand</h2></div><ul><li>A recognizable brand and the DINO</li><li>Access to the DINOPAY and MyDINO Rewards loyalty programs</li><li>Marketing, signage and imaging programs</li><li>Brand Excellence standards and support</li></ul></section>
+${L.length?`<div class="pws-login"><b>Already a partner?</b>${L.map(l=>`<a href="${l.href}" target="_blank" rel="noopener"><span class="ms">login</span>${esc(l.name)}</a>`).join('')}</div>`:''}</div>`}
+function mount(qs){const root=document.querySelector('.pws');if(!root)return;const ans=[null,null,null];
+const hl=k=>root.querySelectorAll('.pws-type').forEach(t=>t.classList.toggle('hl',t.dataset.k===k));
+root.addEventListener('click',e=>{const b=e.target.closest('.pws-opt');if(!b)return;const q=b.closest('.pws-q');q.querySelectorAll('.pws-opt').forEach(o=>{o.classList.toggle('sel',o===b);o.setAttribute('aria-pressed',o===b)});ans[+q.dataset.q]=b.dataset.v;
+const r=root.querySelector('#pws-res');if(!ans[0]||!ans[1]){hl(null);return}
+const m=ans[1]==='jv'?'jv':ans[0]==='lic'?(ans[1]==='deal'?'deal':'lic'):ans[0];const t=TYPES.find(x=>x.k===m);hl(m);
+r.innerHTML=`<span>Your best match: <b>${esc(t.name)}</b></span><a class="pws-btn" href="${ans[2]==='ready'?go(t.a[1]):'#'+t.id}" data-jump="${ans[2]==='ready'?'':t.id}">${ans[2]==='ready'?'Start the conversation':'See the details'}</a>`});
+root.addEventListener('click',e=>{const j=e.target.closest('[data-jump]');if(!j||!j.dataset.jump)return;e.preventDefault();jump(j.dataset.jump)});
+function jump(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-110,behavior:'smooth'})}
+const s=new URLSearchParams(qs||'').get('s');if(s){const map={finder:'pws-finder',brand:'pws-brand'};const id=map[s]||s;if(s.startsWith('t-')){const t=document.getElementById(s);if(t)hl(t.dataset.k)}setTimeout(()=>jump(id),60)}}
+window.HFSNetwork={render,mount};
+})();
