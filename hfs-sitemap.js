@@ -32,8 +32,8 @@ window.HFS_UTILITY = [
  {id:'privacy-policy',name:'Privacy Policy'},{id:'terms-of-use',name:'Terms of Use'},{id:'cookie-policy',name:'Cookie Policy'},{id:'manage-cookies',name:'Manage Cookies'},{id:'accessibility',name:'Accessibility'}
 ];
 window.HFS_FOOTER = [
- [['Find a Station','find-a-station'],['Download DINOPAY','download-the-apps'],['MyDINO Rewards','mydino-rewards'],['DINO Store','@https://mydinostore.com/'],['Loyalty Program','loyalty']],
- [['Become a Distributor','become-a-distributor'],['Wholesale Supply','wholesale-supply'],['Fleet Cards','sinclair-fleet-card'],['Terminal Network','terminal-map'],['Portal Login','@https://www.salesforce.com/']],
- [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Work with Us','work-with-us'],['HF Sinclair Corporate','hf-sinclair-corporate']],
+ [['Find a Station','find-a-station'],['Download DINOPAY','download-the-apps'],['Active Promotions','active-promotions'],['DINO Store','@https://mydinostore.com/'],['Loyalty Program','loyalty']],
+ [['Become a Distributor','become-a-distributor'],['Become a Dealer','become-a-dealer'],['Become a Licensee','licensees'],['Start a Joint Venture','joint-venture'],['B2B Portal Login','@https://distributors.hfsinclair.com/s/login/?ec=302&startURL=%2Fs%2F']],
+ [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Driver Tools','driver-tools'],['HF Sinclair Corporate','hf-sinclair-corporate']],
  [['Contact Sinclair','contact-us']]
 ];

@@ -1,0 +1,45 @@
+.nf{display:grid;gap:40px}.wrap.nf{padding-top:32px;padding-bottom:72px}
+.nf-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center;padding:40px;border-radius:28px;background:var(--s-low)}
+.nf-num{display:flex;align-items:center;justify-content:center;gap:4px;font:800 clamp(96px,14vw,184px)/1 var(--fa);color:var(--p);letter-spacing:-.04em}
+.nf-num img{width:clamp(110px,16vw,210px);height:auto;margin:0 -6px;animation:nf-bob 3.2s ease-in-out infinite;filter:brightness(0) saturate(100%) invert(18%) sepia(92%) saturate(2400%) hue-rotate(352deg) brightness(98%)}
+@keyframes nf-bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+@media (prefers-reduced-motion:reduce){.nf-num img{animation:none}}
+.nf-hc{display:grid;gap:16px}
+.nf-hc .kicker{color:var(--red)}
+.nf-hc h1{font:800 clamp(34px,4.4vw,52px)/1.05 var(--ff);margin:0;color:var(--on-s);text-wrap:balance}
+.nf-hc>p{margin:0;font-size:18px;line-height:1.5;color:var(--on-sv);max-width:520px;text-wrap:pretty}
+.nf-search{display:flex;align-items:center;gap:8px;height:56px;padding:0 6px 0 18px;border-radius:999px;background:var(--s-top);box-shadow:var(--e1);border:1px solid var(--olv);max-width:560px}
+.nf-search:focus-within{outline:2px solid var(--p);outline-offset:2px}
+.nf-search .ms{color:var(--on-sv)}
+.nf-search input{flex:1;min-width:0;border:0;background:none;font:400 16px var(--ff);color:var(--on-s);outline:0;height:100%}
+.nf-search button{height:44px;padding:0 22px;border-radius:999px;border:0;background:var(--p);color:var(--on-p);font:700 15px var(--ff);cursor:pointer}
+.nf-search button:hover{filter:brightness(1.1)}
+.nf-acts{display:flex;flex-wrap:wrap;gap:10px}
+.nf .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.nf-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+.nf-pop h2,.nf-dyk h2{font:700 22px/1.2 var(--ff);margin:0}
+.nf-pop{display:grid;gap:16px}
+.nf-pop h2{color:var(--on-s)}
+.nf-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.nf-link{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:var(--s-top);box-shadow:var(--e1);color:var(--on-s);text-decoration:none;transition:box-shadow .15s,transform .15s}
+.nf-link:hover{box-shadow:var(--e2);transform:translateY(-2px);color:var(--on-s)}
+.nf-link>.ms:first-child{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:12px;background:var(--pc);color:var(--on-pc)}
+.nf-link>span:nth-child(2){flex:1;display:grid;gap:2px;min-width:0}
+.nf-link b{font:700 15px/1.25 var(--ff)}
+.nf-link small{font-size:13px;color:var(--on-sv)}
+.nf-go{color:var(--p);transition:transform .15s}
+.nf-link:hover .nf-go{transform:translateX(3px)}
+.nf-dyk{position:relative;display:grid;gap:16px;padding:28px;border-radius:24px;background:var(--p);color:#fff;overflow:hidden}
+.nf-dyk::after{content:"";position:absolute;right:-30px;bottom:-24px;width:170px;height:120px;background:url(design-files/dino-silhouette.png) center/contain no-repeat;opacity:.12;filter:brightness(0) invert(1);pointer-events:none}
+.nf-dyk-top{display:flex;align-items:center;gap:10px}
+.nf-dyk-top .ms{font-size:28px;color:#ffd84d}
+.nf-yr{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);font:700 13px/1 var(--fa);letter-spacing:.06em}
+.nf-fact{margin:12px 0 0;font:600 19px/1.45 var(--ff);text-wrap:pretty;min-height:5.8em}
+.nf-dyk-acts{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.nf-more{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.7);background:none;color:#fff;font:700 14px var(--ff);cursor:pointer}
+.nf-more:hover{background:rgba(255,255,255,.12)}
+.nf-dyk-acts a{display:inline-flex;align-items:center;gap:4px;color:#fff;font:700 14px var(--ff);text-decoration:underline;text-underline-offset:3px}
+.nf-dyk-acts a:hover{color:#fff;text-decoration-thickness:2px}
+.nf-dyk-acts a .ms{font-size:18px}
+body.dark .nf-dyk{background:#00592e}
+@media (max-width:900px){.nf-hero{grid-template-columns:1fr;gap:20px;padding:28px 22px}.nf-grid{grid-template-columns:1fr}}
