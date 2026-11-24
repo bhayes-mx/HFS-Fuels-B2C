@@ -1,15 +1,15 @@
 // Site structure from HFS.pdf — L1 (red) › L2 (blue, clickable) › L3 (yellow). f = features (orange).
 window.HFS_SITEMAP = [
-{id:'on-the-road',name:'On the Road',children:[
+{id:'driver-tools',name:'Driver Tools',children:[
  {id:'find-a-station',name:'Find a Sinclair Station',quick:[{k:'tier-3-gas',name:'Tier 3',label:'Tier 3 Gas Available',f:[['fu','Tier 3']]},{k:'diesel',name:'Diesel',label:'Diesel Available',f:[['fu','Diesel']]},{k:'open-24-7',name:'Open 24/7',label:'Open 24/7',f:[['am','Open 24/7']]},{k:'convenience-store',name:'Convenience Store',label:'Convenience Store Attached',f:[['am','Convenience Store']]}],children:[
   {id:'search-locate',name:'Search by Amenities',filter:true,desc:'Map',menuDesc:false,f:[
    {name:'Amenities Filter',desc:'Diesel, EV Fast Charging, Car Wash, 24/7, Truck Parking, Convenience Store, Hot Food, Fresh Coffee'},
    {name:'Station Details',desc:'Dynamic landing page per location with live pricing, hours, and available fuels'}]},{id:'search-fuel-type',name:'Search by Fuel Type',filter:true}]},
- {id:'driver-tools',name:'Driver Tools',children:[{id:'trip-planner',name:'Trip Planner'},{id:'savings-calculators',name:'Savings Calculator'},{id:'seasonal-guides',name:'Seasonal Guides'},{id:'commercial-products',name:'Commercial Products'}]},
+ {id:'on-the-road',name:'On the Road',children:[{id:'trip-planner',name:'Trip Planner'},{id:'savings-calculators',name:'Savings Calculator'},{id:'seasonal-guides',name:'Seasonal Guides'},{id:'commercial-products',name:'Commercial Products'}]},
  {id:'quality-fuels',name:'Quality Fuels',children:[{id:'dinocare',name:'DINOCARE® Technology'},{id:'tier-3-gas',name:'Tier 3 Gas'},{id:'e15-gas',name:'E15 Gas'},{id:'elite-diesel',name:'Elite Diesel'}]}]},
-{id:'at-the-pump',name:'At the Pump',children:[
+{id:'at-the-pump',name:'Savings & Offers',children:[
  {id:'dinopay',name:'Apps & Cards',children:[{id:'download-the-apps',name:'Download the Apps'},{id:'dinopay-app',name:'DINOPAY'},{id:'mobile-advantage',name:'Mobile Advantage'}]},
- {id:'fuel-savings',name:'Promos & Offers',children:[{id:'active-promotions',name:'Active Promotions'},{id:'pump-seasonal-guides',name:'Seasonal Promotions'},{id:'sweepstakes-giveaways',name:'Sweepstakes & Giveaways'}]},
+ {id:'fuel-savings',name:'Promotions',children:[{id:'active-promotions',name:'Active Promotions'},{id:'pump-seasonal-guides',name:'Seasonal Promotions'},{id:'sweepstakes-giveaways',name:'Sweepstakes & Giveaways'}]},
  {id:'loyalty',name:'Loyalty Program',children:[{id:'sign-up-access',name:'Sign-Up & Access'},{id:'current-offers',name:'Rewards & Deals'}]},
  {id:'fleets',name:'Fleets',children:[{id:'sinclair-fleet-card',name:'Fleet Card',ext:'https://www.sinclairfleettrack.com/',desc:'Application & account login',menuDesc:false},{id:'commercial-programs',name:'Commercial Programs'}]}]},
 {id:'in-the-shop',name:'In the Shop',children:[
@@ -34,6 +34,6 @@ window.HFS_UTILITY = [
 window.HFS_FOOTER = [
  [['Find a Station','find-a-station'],['Download DINOPAY','download-the-apps'],['Active Promotions','active-promotions'],['DINO Store','@https://mydinostore.com/'],['Loyalty Program','loyalty']],
  [['Become a Distributor','become-a-distributor'],['Become a Dealer','become-a-dealer'],['Become a Licensee','licensees'],['Start a Joint Venture','joint-venture'],['B2B Portal Login','@https://distributors.hfsinclair.com/s/login/?ec=302&startURL=%2Fs%2F']],
- [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Driver Tools','driver-tools'],['HF Sinclair Corporate','hf-sinclair-corporate']],
+ [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Driver Tools','on-the-road'],['HF Sinclair Corporate','hf-sinclair-corporate']],
  [['Contact Sinclair','contact-us']]
 ];

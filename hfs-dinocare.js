@@ -22,7 +22,7 @@ return `<div class="dc-page"><div class="wrap">${crumbs([[a.name],[b.name,href(b
 <section class="dc-band alt" aria-labelledby="dcFuelH"><div class="wrap"><div class="dc-sh"><span class="kicker">Quality fuels</span><h2 id="dcFuelH">Learn about our other quality fuels</h2></div>
 <div class="dc-fuels">${FUELS.map(x=>`<a class="dc-fl" href="${href(x[0])}"><span class="ms">${x[1]}</span><h3>${x[2]}</h3><p>${x[3]}</p><span class="dc-more">Learn more<span class="ms">arrow_forward</span></span></a>`).join('')}</div>
 <div class="dc-end"><button class="hbtn red" id="dcGo2" type="button"><span class="ms">near_me</span>Find a Sinclair station</button><a class="hbtn green" href="${href('download-the-apps')}">Save with DINOPAY®</a></div></div></section></div>`}
-document.addEventListener('click',e=>{if(e.target.closest('#dcGo,#dcGo2')){window.__locPreset={me:true,f:e.target.closest('#dcGo')?[['fu','DINOCARE®']]:[]};location.hash='#/on-the-road/find-a-station';return}
+document.addEventListener('click',e=>{if(e.target.closest('#dcGo,#dcGo2')){window.__locPreset={me:true,f:e.target.closest('#dcGo')?[['fu','DINOCARE®']]:[]};location.hash='#/driver-tools/find-a-station';return}
 const ah=e.target.closest('.dc-ah');if(ah){const it=ah.parentElement,was=it.classList.contains('open');it.parentElement.querySelectorAll('.dc-ai').forEach(n=>{n.classList.remove('open');n.querySelector('.dc-ah').setAttribute('aria-expanded','false')});if(!was){it.classList.add('open');ah.setAttribute('aria-expanded','true')}return}
 if(e.target.closest('#dcHowBtn')){const t=document.getElementById('dcHow');if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'})}});
 window.HFSDinocare={render};})();
