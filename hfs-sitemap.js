@@ -35,5 +35,5 @@ window.HFS_FOOTER = [
  [['Find a Station','find-a-station'],['Download DINOPAY','download-the-apps'],['Active Promotions','active-promotions'],['DINO Store','@https://mydinostore.com/'],['Loyalty Program','loyalty']],
  [['Become a Distributor','become-a-distributor'],['Become a Dealer','become-a-dealer'],['Become a Licensee','licensees'],['Start a Joint Venture','joint-venture'],['B2B Portal Login','@https://distributors.hfsinclair.com/s/login/?ec=302&startURL=%2Fs%2F']],
  [['Safety Data Sheets','our-history'],['Fuel Quality','quality-fuels'],['Press Releases','press-releases'],['Driver Tools','on-the-road'],['HF Sinclair Corporate','hf-sinclair-corporate']],
- [['Contact Sinclair','contact-us']]
+ [['Contact Sinclair','contact-us'],['Get Email Updates','newsroom']]
 ];
